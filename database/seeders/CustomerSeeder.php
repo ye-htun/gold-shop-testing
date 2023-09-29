@@ -2,46 +2,33 @@
 
 namespace Database\Seeders;
 
-use App\Models\ServicePlan;
+use App\Models\Customer;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class ServicePlanSeeder extends Seeder
+class CustomerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
-     *
-     * @return void
      */
     public function run()
     {
         //
-        $servicePlans = [
-            [
-                'id'    => 1,
-                'service_plan'  => 'Mobile Phone Plan',
-            ],
-            [
-                'id'    => 2,
-                'service_plan'  => 'Internet Broadband Plans',
-            ],
-            [
-                'id'    => 3,
-                'service_plan'  => 'Home Phone Plans',
-            ],
-            [
-                'id'    => 4,
-                'service_plan'  => 'Business Network Plans',
-            ],
-            [
-                'id'    => 5,
-                'service_plan'  => 'Family Plans',
-            ],
-            [
-                'id'    => 6,
-                'service_plan'  => 'Pay-As-You-Go Plans',
-            ],
+        $customers = [
+           [
+            'id'  => 1,
+            'name' => 'Luffy',
+            'phone' => '0978676767',
+            'address'   => 'NihonJin'
+           ],
+           [
+            'id'  => 2,
+            'name' => 'Nami',
+            'phone' => '09545688',
+            'address'   => 'Tokyo',
+           ],
         ];
 
-        ServicePlan::insert($servicePlans);
+        Customer::insert($customers);
     }
 }
