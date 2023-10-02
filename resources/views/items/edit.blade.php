@@ -61,6 +61,7 @@
                                 </div>
                                 <div class="form-floating mb-3">
                                     <input type="file" class="form-control" name="image" placeholder="image" value="{{($item->image)}}">
+                                    <input type="hidden" name="old_img" value="{{ $item->image }}">
                                     <img src="{{ asset('img/' . $item->image) }}" alt="" class="w-30" height="150px">
                                     {{-- <label for="floatingInput" >image</label> --}}
                                     @error('image')

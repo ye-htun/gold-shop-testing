@@ -26,6 +26,6 @@ class Customer extends Model
     ];
     public function items()
     {
-        return $this->belongsToMany(Item::class)->withPivot(['price', 'name', 'name']);
+        return $this->belongsToMany(Item::class)->withPivot(['price', 'name']);
     }
 }

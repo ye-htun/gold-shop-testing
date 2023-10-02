@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ItemUpdateRequest;
 use App\Models\Item;
 use Illuminate\Http\Request;
 use App\Http\Requests\ItemRequest;
@@ -77,7 +78,7 @@ class ItemController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ItemRequest $request, $id)
+    public function update(ItemUpdateRequest $request, $id)
     {
         $item = $this->item->find($id);
         $data = $request->all();
@@ -88,6 +89,9 @@ class ItemController extends Controller
             $destination_path=public_path().'/img';
             $file->move($destination_path,$new_name);
             $data['image'] = $new_name;
+        } else
+        {
+            $data['image'] = $request->old_img;
         }
 
         $item->update($data);
