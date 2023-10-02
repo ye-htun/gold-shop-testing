@@ -3,7 +3,7 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <h1 class="h3 mb-3"><strong>Employee</strong> Information</h1>
+            <h1 class="h3 mb-3"><strong>Customer</strong> Information</h1>
             <div class="row">
                 <div class="col-md-2  my-4">
                     <a href="{{ route('customer.index') }} " class="btn btn-dark float-left">Back</a>
